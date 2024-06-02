@@ -1,0 +1,374 @@
+{
+	"info": {
+		"_postman_id": "8c3f517f-3a47-4199-a877-94f9956e7c12",
+		"name": "Animecca_Project",
+		"description": "# animecca_API_test\n\n## セットアップ\n\nインポート後にユーザー登録テストを行なってください。\n\nその後、ログインしてトークンが生成されますので、\n\nこのページの「変数」タブにあるTokenへ入力をお願いします。",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23375172"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user\": {\n    \"username\": \"{{USER_NAEM}}\",\n    \"password\": \"{{PASSWORD}}\",\n    \"password_confirmation\": \"{{PASSWORD}}\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASS_URL}}/users",
+							"host": [
+								"{{BASS_URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user\": {\n    \"username\": \"{{USER_NAEM}}\",\n    \"password\": \"{{PASSWORD}}\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASS_URL}}/users/login",
+							"host": [
+								"{{BASS_URL}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Meccas",
+			"item": [
+				{
+					"name": "Prefecture",
+					"item": [
+						{
+							"name": "Gets",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASS_URL}}/meccas/prefecture/\"探したい都道府県名を入れてね\"",
+									"host": [
+										"{{BASS_URL}}"
+									],
+									"path": [
+										"meccas",
+										"prefecture",
+										"\"探したい都道府県名を入れてね\""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Favorite",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASS_URL}}/:id/favorites",
+									"host": [
+										"{{BASS_URL}}"
+									],
+									"path": [
+										":id",
+										"favorites"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASS_URL}}/:id/favorites",
+									"host": [
+										"{{BASS_URL}}"
+									],
+									"path": [
+										":id",
+										"favorites"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Gets",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASS_URL}}/favorites",
+									"host": [
+										"{{BASS_URL}}"
+									],
+									"path": [
+										"favorites"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n    \"mecca\": {\n      \"anime_id\": \"1\",\n      \"title\": \"タイトル\",\n      \"episode\": \"1\",\n      \"scene\": \"00:00\",\n      \"mecca_name\": \"聖地名\",\n      \"about\": \"聖地の説明\",\n      \"place_id\":\"1\",\n      \"prefecture\": \"a\"\n    }\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASS_URL}}/meccas",
+							"host": [
+								"{{BASS_URL}}"
+							],
+							"path": [
+								"meccas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user\": {\n    \"username\": {{USER_NAME}},\n    \"password\": {{PASSWORD}},\n    \"password_confirmation\": {{PASSWORD}}\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASS_URL}}/meccas/:id",
+							"host": [
+								"{{BASS_URL}}"
+							],
+							"path": [
+								"meccas",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASS_URL}}/meccas/:id",
+							"host": [
+								"{{BASS_URL}}"
+							],
+							"path": [
+								"meccas",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASS_URL}}/meccas/2",
+							"host": [
+								"{{BASS_URL}}"
+							],
+							"path": [
+								"meccas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASS_URL",
+			"value": "http://localhost:3001",
+			"type": "string"
+		},
+		{
+			"key": "USER_NAEM",
+			"value": "test",
+			"type": "string"
+		},
+		{
+			"key": "PASSWORD",
+			"value": "password",
+			"type": "string"
+		},
+		{
+			"key": "TOKEN",
+			"value": "ログインして返されたトークンを入れてください",
+			"type": "string"
+		}
+	]
+}

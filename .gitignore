@@ -1,0 +1,52 @@
+# Node.js関連（Next.js）
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# テスト関連
+/coverage
+
+# Next.js関連
+/.next/
+/out/
+
+/build
+
+# Misc
+.DS_Store
+*.pem
+
+# デバッグログ
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ローカル環境ファイル
+.env*.local
+
+# Vercel
+.vercel
+
+# TypeScript関連
+*.tsbuildinfo
+next-env.d.ts
+
+# Rails関連
+/.bundle
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+/tmp/pids/*
+!/tmp/pids/
+!/tmp/pids/.keep
+/storage/*
+!/storage/.keep
+/tmp/storage/*
+!/tmp/storage/
+!/tmp/storage/.keep
+/config/master.key
+/config/credentials.yml.enc
+
+/public
