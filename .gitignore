@@ -1,5 +1,5 @@
 # Node.js関連（Next.js）
-**/node_modules
+*node_modules/
 /.pnp
 .pnp.js
 .yarn/install-state.gz
@@ -34,7 +34,7 @@ next-env.d.ts
 
 # Rails関連
 /.bundle
-/log/*
+*/log/*
 /tmp/*
 !/log/.keep
 !/tmp/.keep
