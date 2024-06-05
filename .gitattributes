@@ -1,2 +1,10 @@
 animecca_web/node_modules/@next/swc-linux-x64-gnu/next-swc.linux-x64-gnu.node filter=lfs diff=lfs merge=lfs -text
 animecca_web/node_modules/@next/swc-linux-x64-musl/next-swc.linux-x64-musl.node filter=lfs diff=lfs merge=lfs -text
+animecca_web/node_modules/typescript/lib/typescript.js filter=lfs diff=lfs merge=lfs -text
+animecca_web/node_modules/typescript/lib/tsserver.js filter=lfs diff=lfs merge=lfs -text
+animecca_web/node_modules/tailwindcss/peers/index.js filter=lfs diff=lfs merge=lfs -text
+animecca_web/node_modules/next/dist/server/lib/squoosh/avif/avif_node_enc.wasm filter=lfs diff=lfs merge=lfs -text
+animecca_web/.next/cache/webpack/client-development/1.pack.gz filter=lfs diff=lfs merge=lfs -text
+animecca_web/.next/static/chunks/main-app.js filter=lfs diff=lfs merge=lfs -text
+animecca_web/node_modules/next/dist/compiled/next-server/app-page-experimental.runtime.dev.js.map filter=lfs diff=lfs merge=lfs -text
+animecca_web/node_modules/typescript/lib/tsc.js filter=lfs diff=lfs merge=lfs -text
