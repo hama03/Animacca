@@ -19,7 +19,7 @@ services:
     volumes:
       - ./animecca_api:/rails
       - animecca_api_bundle:/rails/vendor/bundle
-    command: bundle exec rails s -p 3001 -b '0.0.0.0'
+    command: sh -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3001 -b '0.0.0.0'"
     depends_on:
       - db
     environment:
